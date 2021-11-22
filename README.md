@@ -25,12 +25,11 @@
 
   * git clone https://github.com/silentaki/BetterCloud
   * npm install (Installs all dependencies)
-  * npm run cypress:open (for dashboard acccess)
 
   ## CLI Access
 
-  * npm run openCypress
-  * npm run runHeadless (headless run)
+  * npm run openCypress (Opens the UI)
+  * npm run test (headless run)
   * npm run headTest (with UI)
   * npm run chromeTest (with Chrome latest version)
   * node_modules/.bin/cypress run --record --key b0e0ef56-b1b8-4d68-9c77-59d797de4d19 (cypress dashboard command)
