@@ -4,3 +4,4 @@ node_modules
 mochawesome-report
 cypress/integration/export
 cypress/videos
+cypress/screenshots

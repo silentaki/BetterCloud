@@ -3,7 +3,6 @@ Feature: : Create csv file with leadership membername and title
     @TC
     Scenario: Store the names and excerpts from the profile into csv file
         Given User navigates to BetterCloud website
-        #Then User clicks "Company" tab
-        Then User clicks about us and verify About BetterCloud is visible
-        And User click leadership link
+        Then User navigate to about us page and verify About BetterCloud is visible
+        And User navigate to leadership page
         Then User saves names and excerpts from the profile into csv file
