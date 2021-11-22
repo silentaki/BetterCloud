@@ -4,7 +4,8 @@
   "description": "An E2E Test Automation framework",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cypress run",
+    "openCypress": "node_modules/.bin/cypress open",
+    "runHeadless": "node_modules/.bin/cypress run",
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
     "dashboardRun": "npm run test --record --key b0e0ef56-b1b8-4d68-9c77-59d797de4d19 --browser chrome"
