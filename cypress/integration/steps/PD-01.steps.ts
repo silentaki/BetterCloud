@@ -3,6 +3,7 @@ import { mainPage } from "../pages/main.page";
 
 Given("User navigates to BetterCloud website", () => {
   mainPage.visit("https://www.bettercloud.com/");
+  mainPage.search.should("be.visible");
 });
 
 Given("User navigate to about us page and verify About BetterCloud is visible", () => {
