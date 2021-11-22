@@ -1,29 +1,46 @@
-import { Given } from "cypress-cucumber-preprocessor/steps";
+import { Given, Then } from "cypress-cucumber-preprocessor/steps";
 import { mainPage } from "../pages/main.page";
 
 Given("User navigates to BetterCloud website", () => {
   mainPage.visit("https://www.bettercloud.com/");
 });
 
-Given("User clicks {string} tab", (link1: string) => {
-  mainPage.search.should('be.visible')
+Then("User clicks {string} tab", (link1: string) => {
+  mainPage.visit("https://www.bettercloud.com/");
+  cy.get('a').contains('Company').invoke('show').trigger('mouseover').click({ force: true })
+  cy.wait(1000)
+  cy.get('button[aria-label="Menu Toggle Company"]').click({force:true})
+  cy.wait(5000)
+  
+  // cy.document().then($document => {
+  //   $document.addEventListener('click',(MouseEvent)=>{
+  //     MouseEvent.stopPropagation()
+  //   })
+//   function DoPrevent(e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//  }
+//    cy.get('li.user-login').off('')
+  })
+  
+
+  // mainPage.search.should('be.visible')
  // cy.get('button[aria-label="Menu Toggle Company"] + div.wrapper-sub-menu').invoke('show').click({ force: true })
   //mainPage.aboutUs.should("be.visible");
   //cy.get('button[aria-label="Menu Toggle Company"] + div.wrapper-sub-menu').click({force:true})
   // cy.get('a').contains('Company').invoke('show').trigger('mouseover').click({ force: true })
-   cy.xpath('//a[text()="Company"]').click()
-   })
 
 Given("User clicks about us and verify About BetterCloud is visible", () => {
-  mainPage.aboutUs.should("be.visible");
-  mainPage.aboutUs.click();
+  mainPage.visit("https://www.bettercloud.com/company");
+  // mainPage.aboutUs.should("be.visible");
+  // mainPage.aboutUs.click();
   mainPage.Title.invoke("prop", "outerHTML").should("contains", "h1");
 });
 
 Given("User click leadership link", () => {
-  cy.wait(5000);
-  mainPage.leadership.should("be.visible");
-  mainPage.leadership.click();
+  mainPage.visit("https://www.bettercloud.com/leadership");
+  // mainPage.leadership.should("be.visible");
+  // mainPage.leadership.click();
   mainPage.leadershipHeader.invoke("text").should("contains", "Leadership");
 });
 

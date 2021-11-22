@@ -4,8 +4,9 @@
   "description": "An E2E Test Automation framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open"
+    "test": "node_modules/.bin/cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome"
   },
   "keywords": [
     "automation"
@@ -14,8 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.11.7",
-    "cypress": "^8.7.0",
+    "cypress": "^9.0.0",
     "cypress-xpath": "^1.6.2",
+    "mocha": "^9.1.3",
+    "mochawesome": "^7.0.1",
     "typescript": "^4.4.4"
   },
   "cypress-cucumber-preprocessor": {
@@ -23,5 +26,11 @@
   },
   "dependencies": {
     "cypress-cucumber-preprocessor": "^4.3.0"
-  }
+  },
+  "files": [
+    "/integration/*",
+    "/pages/*",
+    "/support/*",
+    "tsconfig.json"
+  ]
 }

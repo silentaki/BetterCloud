@@ -1,3 +1,7 @@
 {
-    "testFiles": "**/*.{feature,features}"
+    "pageLoadTimeout": 30000,
+    "testFiles": "**/*.{feature,features}",
+    "projectId": "nyxe43",
+    "reporter": "mochawesome"
+      
 }
